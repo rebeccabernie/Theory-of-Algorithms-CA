@@ -5,11 +5,13 @@
 ; End the recursion when (or if) the number becomes 1. Call the function collatz-list. Collatz-list should return a list whose first element is n0, the second element is n1, and so on.
 
 (define (collatz-list x)
-  (cons x `())
-  (if (= (modulo x 2) 0) 
-    (cons (collatz-list((+ 1 (* 3 x)))))
-    (cons (collatz-list((/ x 2))))
-  )
+  ;(cons x `())
+  (if (= x 1)
+    (if (= (modulo x 2) 0) 
+      (cons x (collatz-list(/ x 2)))
+      (cons x (collatz-list(+ 1 (* 3 x))))
+    )
+    (x))
 )
 
 (collatz-list 5)
