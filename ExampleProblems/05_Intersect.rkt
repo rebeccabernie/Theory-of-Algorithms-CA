@@ -1,0 +1,19 @@
+#lang racket
+; Write a procedure inter that takes two lists as arguments. It should return a list containing every element that appears in both lists, exactly once.
+
+; car = first el in list, cdr = rest of list. 
+; cons = constructs lists - (cons 'pine '(fir oak maple)) prints (pine fir oak maple). 
+
+; Probably need some stuff at least from previous question?
+(define (appearances l1 l2)
+  (if (null? l2)
+    0
+    (if (equal? l1 (car l2))
+      (+ 1 (appearances l1 (cdr l2)))
+      (appearances l1 (cdr l2)))
+    ))
+
+(define (inter l1 l2)
+)
+
+(inter (list 2 3 4 5 7) (list 2 2 4 5 6))
