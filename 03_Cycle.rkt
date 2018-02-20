@@ -5,7 +5,8 @@
 ; (rcycle (list 1 2 3 4 5)) --> '(5 1 2 3 4)
 
 (define (lcycle l1)
-    l1
+    (cons (cdr l1) (car l1))
+    ;(remove (cdr l1) l1)
 )
 
 (define (rcycle l2)
@@ -13,5 +14,5 @@
 )
 
 (lcycle (list 1 2 3 4 5))
-(rcycle (list 1 2 3 4 5))
+;(rcycle (list 1 2 3 4 5))
 
