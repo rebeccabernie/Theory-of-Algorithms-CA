@@ -13,3 +13,5 @@
 (* 3 (+ 5 (/ 10 5)))
 
 ; b)
+(display "(2 + 3 + 4 + 5) = ")
+( + 2 3 4 5) ; only one operator needed for multiple operands - http://www.gnu.org/software/mit-scheme/documentation/mit-scheme-ref/Numerical-operations.html
