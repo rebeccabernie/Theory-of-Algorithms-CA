@@ -8,6 +8,9 @@
 (define (grcomdiv a b)
   (if (< a b)
       (grcomdiv b a)
-      (= b 0)))
+      (if(= b 0)
+         a ; return a, GCD of (4, 0) is 4
+         (grcomdiv(modulo a b) b)))) ; Keep going - pass modulo/remainder of 1st into 2nd and b into function again
 
 (grcomdiv 10 15)
+(grcomdiv 64 30)
