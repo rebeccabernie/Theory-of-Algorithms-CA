@@ -14,11 +14,13 @@
     ))
 
 (define (inter l1 l2)
-  (if (null? l2)
-    '() ; If list2 is null, return empty
+  (if (null? l1)
+    `() ; If list1 is null, return empty
     (if (> (appearances (car l1) l2) 0) ; if the 1st el of list1 appears in l2 at least once (multiple doesn't matter, once is enough)
-      (display "") ; true = do something...
-      (inter (cdr l1) l2) ; False = pass l2 and rest of l1 back to function
-    )))
+      (cons (car l1) (inter (cdr l1) l2)) ; true = add current el (the car of list1) to empty list and run function again with l2 and rest of l1
+      (inter (cdr l1) l2)))) ; False = pass l2 and rest of l1 back to function
 
+      
 (inter (list 2 3 4 5 7) (list 2 2 4 5 6))
+(inter (list 2 3 4 5 7) (list 8 9 10 11 12))
+(inter (list ) (list 8 9 10 11 12))
