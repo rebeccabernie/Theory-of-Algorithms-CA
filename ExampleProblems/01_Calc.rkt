@@ -19,3 +19,9 @@
 ; c)
 (display "(1 + (5 + (2 + (10 ÷ 3)))) = (+ 1 (+ 5 (+ 2 (/ 10 3)))) = ")
 (+ 1 (+ 5 (+ 2 (/ 10 3))))
+
+; d)
+(display "(1 + (5 + (2 + (10 ÷ 3.0)))) = (+ 1(+ 5(+ 2(/ 10 3.0)))) = ")
+(+ 1(+ 5(+ 2(/ 10 3.0))))
+
+; c deals with whole numbers, produces fraction, d deals with a specified decimal (3.0), produces decimal.
