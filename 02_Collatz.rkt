@@ -8,8 +8,8 @@
   (cons x (if (= x 1) 
     null ; if x is 1 don't add anything else
     (if (= (modulo x 2) 0) ; add one of these depending on if given is even or odd
-      (cons x (collatz-list(/ x 2)))
-      (cons x (collatz-list(+ 1 (* 3 x))))
+      (collatz-list(/ x 2))
+      (collatz-list(+ 1 (* 3 x)))
     )
   ))
 )
