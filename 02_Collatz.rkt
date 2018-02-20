@@ -5,7 +5,19 @@
 ; End the recursion when (or if) the number becomes 1. Call the function collatz-list. Collatz-list should return a list whose first element is n0, the second element is n1, and so on.
 
 (define (collatz-list x)
-x)
+  (if (= (modulo x 2) 0) 
+    (even x)
+    (odd x)
+  )
+)
+
+(define (odd n)
+  n
+)
+
+(define (even n)
+  n
+)
 
 (collatz-list 5)
 (collatz-list 9)
