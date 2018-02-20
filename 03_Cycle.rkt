@@ -5,13 +5,20 @@
 ; (rcycle (list 1 2 3 4 5)) --> '(5 1 2 3 4)
 
 (define (lcycle l1)
-    (cons (cdr l1) (car l1))
-    ;(remove (cdr l1) l1)
+    (flatten-list (cons (cdr l1) (cons (car l1) null)))
 )
 
 (define (rcycle l2)
     l2
 )
+
+; Flatten a list adapted from https://stackoverflow.com/a/28753817
+; Without flatten functionality, lcycle returns '((2 3 4 5) 1) - list within a list
+(define (flatten-list l)
+  (cond ((null? l) '()) 
+        ((pair? l)
+         (append (flatten-list (car l)) (flatten-list (cdr l))))
+        (else (list l))))
 
 (lcycle (list 1 2 3 4 5))
 ;(rcycle (list 1 2 3 4 5))
