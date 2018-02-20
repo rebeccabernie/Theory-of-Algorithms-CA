@@ -9,19 +9,23 @@
 
 
 ; a)
-(display "(3 × (5 + (10 ÷ 5))) = (* 3 (+ 5 (/ 10 5))) = ")
+(display "a) (3 × (5 + (10 ÷ 5))) = (* 3 (+ 5 (/ 10 5))) = ")
 (* 3 (+ 5 (/ 10 5)))
 
 ; b)
-(display "(2 + 3 + 4 + 5) = ( + 2 3 4 5) = ")
+(display "\nb) (2 + 3 + 4 + 5) = ( + 2 3 4 5) = ")
 ( + 2 3 4 5) ; only one operator needed for multiple operands - http://www.gnu.org/software/mit-scheme/documentation/mit-scheme-ref/Numerical-operations.html
 
 ; c)
-(display "(1 + (5 + (2 + (10 ÷ 3)))) = (+ 1 (+ 5 (+ 2 (/ 10 3)))) = ")
+(display "\nc) (1 + (5 + (2 + (10 ÷ 3)))) = (+ 1 (+ 5 (+ 2 (/ 10 3)))) = ")
 (+ 1 (+ 5 (+ 2 (/ 10 3))))
 
 ; d)
-(display "(1 + (5 + (2 + (10 ÷ 3.0)))) = (+ 1(+ 5(+ 2(/ 10 3.0)))) = ")
+(display "\nd) (1 + (5 + (2 + (10 ÷ 3.0)))) = (+ 1(+ 5(+ 2(/ 10 3.0)))) = ")
 (+ 1(+ 5(+ 2(/ 10 3.0))))
 
 ; c deals with whole numbers, produces fraction, d deals with a specified decimal (3.0), produces decimal.
+
+; e)
+(display "\ne) (3 + 5) × (10 ÷ 2) = (* (+ 3 5 )(/ 10 2)) = ")
+(* (+ 3 5 )(/ 10 2))
