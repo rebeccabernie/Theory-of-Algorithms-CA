@@ -9,10 +9,21 @@
 )
 
 
-; Working off https://stackoverflow.com/a/5007129 / https://stackoverflow.com/a/13175325
 (define (rcycle l2)
+    (recursive l2 (length l2))
+)
+
+(define (recursive l2 i)
+    (if (= i 1)
+        l2
+        (recursive (flatten-list(cons (cdr l2) (car l2))) i)
+    )
+)
+
+; Working off https://stackoverflow.com/a/5007129 / https://stackoverflow.com/a/13175325
+(define (get-last l2)
     (cond ((null? (cdr l2)) (car l2))
-        (else (rcycle (cdr l2)))))
+        (else (get-last (cdr l2)))))
 
 ; Flatten a list adapted from https://stackoverflow.com/a/28753817
 ; Without flatten functionality, lcycle returns '((2 3 4 5) 1) - list within a list
