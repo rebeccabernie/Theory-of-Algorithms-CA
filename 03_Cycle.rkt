@@ -10,20 +10,15 @@
 
 
 (define (rcycle l2)
-    (recursive l2 (length l2))
+    (recursive l2 (length l2)) ; Call the recursive function, pass in the list and the length of the list
 )
 
-(define (recursive l2 i)
+(define (recursive l2 i) ; Recursive function idea based off https://stackoverflow.com/a/29757579
     (if (= i 1)
-        l2
-        (recursive (flatten-list(cons (cdr l2) (car l2))) i)
+        l2 ; If i = 1 print out the current list (i.e. cdr has been cons'd to car x number of times, x = length of list)
+        (recursive (flatten-list(cons (cdr l2) (car l2))) (- i 1)) ; Call the recursive function with the flattened cdr + car, with the count
     )
 )
-
-; Working off https://stackoverflow.com/a/5007129 / https://stackoverflow.com/a/13175325
-(define (get-last l2)
-    (cond ((null? (cdr l2)) (car l2))
-        (else (get-last (cdr l2)))))
 
 ; Flatten a list adapted from https://stackoverflow.com/a/28753817
 ; Without flatten functionality, lcycle returns '((2 3 4 5) 1) - list within a list
@@ -35,4 +30,6 @@
 
 ;(lcycle (list 1 2 3 4 5))
 (rcycle (list 1 2 3 4 5))
+;(rcycle (list 5 6 7 8 9 10 11)) ; Testing it works with longer lists (it does)
+
 
