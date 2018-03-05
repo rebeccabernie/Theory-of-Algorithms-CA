@@ -12,4 +12,5 @@
       (appearances i (cdr l))) ; false = just call function again
     ))
 
-(appearances 3 (list 1 1 2 3 4 3 43))
+(appearances 3 (list  2 3 4 5 3))
+;(appearances 3 (list 1 1 2 3 4 3 43))
