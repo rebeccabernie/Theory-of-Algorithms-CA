@@ -4,7 +4,12 @@
 ;               (sublsum (list 1 2 3 4 5))   =>     '()
 
 (define (sublsum l1)
-    l1
+    ;(calculate (car (combinations l1)))
+(car (combinations l1))
+)
+
+(define (calculate sl)
+    (+ (car sl) (calculate (cdr sl)))
 )
 
 (sublsum (list 1 2 3 4 -5))
