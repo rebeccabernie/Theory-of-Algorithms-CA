@@ -9,14 +9,10 @@
 )
 
 
-; Working off https://stackoverflow.com/a/5007129
-(define (rcycle lst)
-    (flatten-list (cons
-    (if (null? (cdr lst))
-        '()
-        (cons (car lst) (rcycle (cdr lst))))
-        
-        (cdr lst))))
+; Working off https://stackoverflow.com/a/5007129 / https://stackoverflow.com/a/13175325
+(define (rcycle l2)
+    (cond ((null? (cdr l2)) (car l2))
+        (else (rcycle (cdr l2)))))
 
 ; Flatten a list adapted from https://stackoverflow.com/a/28753817
 ; Without flatten functionality, lcycle returns '((2 3 4 5) 1) - list within a list
@@ -26,6 +22,6 @@
          (append (flatten-list (car l)) (flatten-list (cdr l))))
         (else (list l))))
 
-(lcycle (list 1 2 3 4 5))
+;(lcycle (list 1 2 3 4 5))
 (rcycle (list 1 2 3 4 5))
 
