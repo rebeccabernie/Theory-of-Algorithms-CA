@@ -12,10 +12,13 @@
 
 (define (sum comb)
   (if (null? comb) ; if the current combination is null
-    0 ; output 0 - sum of nothing is nothing
-    (if (= 0 (+ (car (car comb)) (sum (cdr (car comb))))) ; else add recursively sum the cdr each time, add to car
-        comb ; if the sum of the combination is 0, output the combination
-        "not 0" ; else not 0, do something
+    '() ; output 0 - sum of nothing is nothing
+    (if (null? (cdr (car comb)))
+        (sum (cdr comb))
+        (if (= 0 (+ (car (car comb)) (sum (cdr (car comb))))) ; else add recursively sum the cdr each time, add to car
+            (car comb) ; if the sum of the combination is 0, output the combination
+            (sum(cdr comb)) ; else not 0, pass back in
+        )
     )
   )
 )
