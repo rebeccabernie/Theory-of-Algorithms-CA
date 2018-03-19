@@ -6,32 +6,30 @@
 (define (sublsum l1)
     ;(combinations l1)
     (if (null? l1)
-        '()
-        (split (cdr (combinations l1))) ; First el will always be the empty set..?
+        '() ; If the given list is empty return an empty list
+        (split (cdr (combinations l1))) ; First el will always be the empty set so only need to pass the cdr to the split function
     )
 )
 
 (define (split combs)
     (if (null? combs)
-        0
+        '() ; If there are no combinations (given an empty list), output empty list
         (if (= 0 (sum(car combs)))
-            (car combs)
-            (split (cdr combs))
+            (cons (car combs) (split (cdr combs))) ; if the sum of a given combination is 0, add it to a list, go back and check the rest of the combinations
+            (split (cdr combs)) ; If sum of combination =/= 0, go back and check rest of list
         )
     )
 )
 
-
+; Sums the elements of a given list
 (define (sum comb)
-    comb
     (if (null? (cdr comb))
-        (+ (car comb) 0)
-        (+ (car comb) (sum(cdr comb)))
+        (+ (car comb) 0) ; If there's only one element just return the car + 0 (returning car gives an error, + 0 fixes this)
+        (+ (car comb) (sum(cdr comb))) ; If more than one element, add the car to the sum of the cdr (sum cdr loops back on itself)
          
     )
 )
 
-;(sum (list 1 2 3 4))
-;(sum (list '()))
-
 (sublsum (list 1 2 3 4 -5))
+(sublsum (list 1 2 3 4 5))
+;(sublsum (list -1 1 -2 2 3 -5 4)) ; Testing on larger list to make sure, works fine
