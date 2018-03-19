@@ -14,7 +14,10 @@
 (define (split combs)
     (if (null? combs)
         0
-        (sum(car combs))
+        (if (= 0 (sum(car combs)))
+            (car combs)
+            (split (cdr combs))
+        )
     )
 )
 
