@@ -21,8 +21,10 @@
 
 (define (sum comb)
     comb
-    (cond [(pair? comb) (+ (sum (cdr comb)) (car comb))]
-          [(not null? (cdr comb)) (+ (sum (cdr comb)) (car comb))]
+    (if (null? (cdr comb))
+        (+ (car comb) 0)
+        (+ (car comb) (sum(cdr comb)))
+         
     )
 )
 
