@@ -9,9 +9,9 @@
 
  (define (element-in-common? l1 l2 l3)
   (cond [(null? l1) 0]
-        [(= (car l1)(car l2))(cons (car l1))]
-        [(= (car l1)(car l3))(cons (car l1))]
-        [(= (car l2)(car l3))(cons (car l2))]
+        [(= (car l1)(car l2))(cons (car l1)(element-in-common? (cdr l1)(cdr l2)(cdr l3)))]
+        [(= (car l1)(car l3))(cons (car l1)(element-in-common? (cdr l1)(cdr l2)(cdr l3)))]
+        [(= (car l2)(car l3))(cons (car l2)(element-in-common? (cdr l1)(cdr l2)(cdr l3)))]
         [0]
   )
  )
