@@ -49,6 +49,3 @@
 
 ; Check binary list
 (hamming-weight (list 1 0 1 0 1 1 1 0))
-(hamming-weight (list 1 1))
-(hamming-weight (list 0 0))
-(hamming-weight (list ))
