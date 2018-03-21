@@ -8,7 +8,7 @@ This repository contains work on 10 exercises, completed from scratch in the [Ra
 ## Explanation of Individual Problems
 
 Jump to: [Problem 1](#problem-1), [Problem 2](#problem-2), [Problem 3](#problem-3), [Problem 4](#problem-4), 
-
+---
 ### Problem 1
 *Write a function in Racket that uses a brute-force algorithm that takes a single positive integer and returns true if the number is a prime and false otherwise.*  
 
@@ -17,7 +17,7 @@ The function `decide-prime` takes one number as input and checks to see if the n
 Otherwise, the given number `p` and a count `n` (starting at 2) will be passed to a second function, `check`. If p and n are equal, the program will output "prime" and end. Otherwise, it will check if the number can be divided by 2 evenly - if so, "not a prime" will be outputted and the program will end. Otherwise, it will pass the given number and `(n + 1)` back to the `check` function - these steps repeat until `p` is equal to `n`, in which case the number is prime.  
 
 *[back to top](#explanation-of-individual-problems)*  
-
+---
 ### Problem 2
 *Write, from scratch, a function in Racket that takes a positive integer n0 (x) as input and returns a list by recursively applying the following operation, starting with the input number:*  
 *If x is odd => 3(x) + 1. If x is even => x / 2.*  
@@ -28,7 +28,7 @@ The function `collatz-list` takes one number, `x`, as input and adds `x`to a lis
 *Example input:* **5**. 5=/=1 -> 3(5)+1= **16**, 16=/=1 -> 16/2= **8**, 8=/=1 -> 8/2= **4**, 4=/=1 -> 4/2= **2**, 2=/=1 -> 2/2= **1**, 1=1, end. *Output: '(5 16 8 4 2 1)*.  
 
 *[back to top](#explanation-of-individual-problems)*  
-
+---
 ### Problem 3
 *Write, from scratch, two functions in Racket. The first is called lcycle - it takes a list as input and returns the list cyclically shifted one place to the left. The second is called rcycle - it shifts the list cyclically shifted one place to the right.*  
 
@@ -41,7 +41,7 @@ The function `rcycle`is slightly more complex than `lcycle`. It takes a list as 
 *Note:*  I used a `flatten-list`function, adapted from [this answer on stack overflow](https://stackoverflow.com/a/28753817), to prevent the program from creating lists within lists.
 
 *[back to top](#explanation-of-individual-problems)*  
-
+---
 ### Problem 4
 *Write a function sublsum in Racket that takes a list (of integers) as input and returns a list of sublists of it that sum to zero. For this problem, you can use the combinations built-in function. Note the order of the sublists and their elements doesn't matter.*  
 
@@ -51,3 +51,10 @@ The `split` function checks each combination of elements in the given list. If t
 The `sum` function recursively adds each element in a given list to the remainder of the list, until the list is empty.  
 
 *[back to top](#explanation-of-individual-problems)*  
+---
+### Problem 5
+*Write a function hamming-weight in Racket that takes a list l as input and returns the number of non-zero elements in it.*  
+
+*[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/05_HammingW.rkt)*  
+The function `hamming-weight` takes one list as input and checks first to see if the list is null, in which case 0 is outputted. If the list is not null, the function checks to see if there is only one element in the list. If so, it outputs that element - `(list 0)` has 0 non-zero elements, `(list 1)` has 1 non-zero elements. If there is more than one element in the list, it passes the list to the `sum` function.  
+The `sum` function first checks to see if a given list contains one element. If so, it returns the element (1 or 0). If there is more than one element, it checks to see if the first element is 1. If so, it adds this to a count and passes the remainder back to the `sum` function. If not, it does not add to the count and passes the remainder back. The program will eventually end and print out a total for the number of non-zero elements of a list.
