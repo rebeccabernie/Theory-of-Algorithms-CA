@@ -67,4 +67,18 @@ The `sum` function recursively adds each element in a given list to the remainde
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/05_HammingW.rkt)*  
 The function `hamming-weight` takes one list as input and checks first to see if the list is null, in which case 0 is outputted. If the list is not null, the function checks to see if there is only one element in the list. If so, it outputs that element - `(list 0)` has 0 non-zero elements, `(list 1)` has 1 non-zero elements. If there is more than one element in the list, it passes the list to the `sum` function.  
-The `sum` function first checks to see if a given list contains one element. If so, it returns the element (1 or 0). If there is more than one element, it checks to see if the first element is 1. If so, it adds this to a count and passes the remainder back to the `sum` function. If not, it does not add to the count and passes the remainder back. The program will eventually end and print out a total for the number of non-zero elements of a list.
+The `sum` function first checks to see if a given list contains one element. If so, it returns the element (1 or 0). If there is more than one element, it checks to see if the first element is 1. If so, it adds this to a count and passes the remainder back to the `sum` function. If not, it does not add to the count and passes the remainder back. The program will eventually end and print out a total for the number of non-zero elements of a list.  
+*Example:* `'(0 1 1 0 0 1 0)` will return 3.  
+
+*[back to top](#explanation-of-individual-problems)*  
+
+-----  
+
+### Problem 6
+*Write a function hamming-distance in Racket that takes two lists and returns the number of positions in which they diﬀer.*  
+
+*[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/06_HammingD.rkt)*  
+The `hamming-distance` function takes two lists as input. If a list is empty, the function will return the length of the other list. The function then checks if the `car` of both lists is the same, the `cdr` of both lists is passed back to the `hamming-distance` function. If the `car`s are not the same, the count is incremented and the `cdr`s passed back to `hamming-distance`.  
+*Example:* `(list 1 0 1 0 1 1 1 0) (list 1 1 1 1 0 0 0 0))` => **5** positions where elements differ.  `(list ) (list 1 1 1 1 0 0 0 0))` => **8** positions where elements differ.
+
+*[back to top](#explanation-of-individual-problems)*  
