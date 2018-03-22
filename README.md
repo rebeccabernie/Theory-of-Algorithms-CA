@@ -5,6 +5,16 @@
 ## Breakdown of Project
 This repository contains work on 10 exercises, completed from scratch in the [Racket](https://racket-lang.org/) programming language. Permitted built in functions include `cons, car, cdr, define, lambda, if, null, null?, cond, map, =` and basic numerical operators `(+, -, *, /, modulo)`.  
 Each problem is worth 3%, the total weight of the project is 30%.  
+#### Getting Set Up
+Racket (including the DrRacket IDE) can be downloaded [here](http://download.racket-lang.org/). Racket must be added to your system path, if not already there. See [here](https://docs.racket-lang.org/pollen/Installation.html) for a full Racket installation guide.  
+
+To download this repository, open the command line in any folder and type `git clone https://github.com/rebeccabernie/Theory-of-Algorithms-CA.git` and then `cd Theory-of-Algorithms-CA`. Alternatively, the repository can be downloaded as a zip file by clicking the the green "Clone or download" button near the top right of this page, then clicking "Download ZIP".  
+
+Each file can be run by opening a command line in the `Theory-of-Algorithms-CA` folder and typing `racket NameOfFile.rkt`.  
+
+Racket programs can be written and edited in DrRacket, but I used [Visual Studio Code](https://code.visualstudio.com/) instead. I did use DrRacket briefly, but found VSCode to be more efficient when working with multiple files - it was also very easy to set up for Racket.  
+The [.vscode](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/tree/master/.vscode) folder in this repository contains a file called tasks.json. This file allows racket files to be run directly from VSCode, without opening up a separate command line.  
+Open any racket file in VSCode and hold `Ctrl` + `Shift` + `B` to open the built in terminal, which will display the output of the opened file.  
 
 ## Explanation of Individual Problems
 Some explanations contain references to Racket functions `car` and `cdr`. `car` refers to the first element of a given list, `cdr` returns a list containing *all other elements of the list*.  
@@ -126,6 +136,8 @@ The function `sod2` takes three lists as input and first checks if the first lis
 *Write a function `lstq` in Racket that takes as arguments two lists l and m of equal length and containing numbers. It should return d, the distance given by the sum of the square residuals between the numbers in the lists: d = ([element in l] - [element in m]) ^2*  
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/10_Lstq.rkt)*  
-
+This file is split into three functions - `lstq`, `get-list` and `sum`. The `lstq` function takes two lists as input and checks to see if the first is empty - equal length specified in problem, if one is empty so is the other. If the list is empty, the output is 0 (the sum of nothing is nothing), otherwise the two lists are passed to `get-list` and then `sum`.  
+The `get-list` function takes two lists as input. It takes the `car m` from the `car l` and squares the answer. This result is added to a list, and the `cdr` of each list passed back to `get-list`. When there are no more elements, the new list is returned.  
+The `sum` function takes a list as input and checks to see if there is only one element in the list. If so, it returns the `car` of this list. Otherwise, it adds the `car` and passes the `cdr` of the list back to `sum`, and when there are no more elements returns the sum.
 
 *[back to top](#theory-of-algorithms-programming-project-2018)*
