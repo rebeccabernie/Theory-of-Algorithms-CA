@@ -25,6 +25,6 @@
     )
 )
 
-(display "(list 4.5 5.1 6.2 7.8) (list 1.1 -0.1 6.1 3.8)  =>  ")
+(display "(list 4.5 5.1 6.2 7.8) (list 1.1 -0.1 6.1 3.8) \n  =>  ")
 (lstq (list 4.5 5.1 6.2 7.8) (list 1.1 -0.1 6.1 3.8))
 ; (lstq (list 10 5 4) (list 6 3 1)) ; = 29, works fine

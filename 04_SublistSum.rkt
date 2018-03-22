@@ -30,6 +30,8 @@
     )
 )
 
+(display "(list 1 2 3 4 -5) \n  =>  ")
 (sublsum (list 1 2 3 4 -5))
+(display "(list 1 2 3 4 5) \n  =>  ")
 (sublsum (list 1 2 3 4 5))
 ;(sublsum (list -1 1 -2 2 3 -5 4)) ; Testing on larger list to make sure, works fine

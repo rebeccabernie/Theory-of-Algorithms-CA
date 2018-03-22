@@ -14,6 +14,9 @@
   ))
 )
 
+(display "5  =>  ")
 (collatz-list 5)
+(display "9  =>  ")
 (collatz-list 9)
+(display "2  =>  ")
 (collatz-list 2)

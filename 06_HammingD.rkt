@@ -10,5 +10,6 @@
     )
 )
 
+(display "(list 1 0 1 0 1 1 1 0) (list 1 1 1 1 0 0 0 0) \n  =>  ")
 (hamming-distance (list 1 0 1 0 1 1 1 0) (list 1 1 1 1 0 0 0 0))
 ;(hamming-distance (list 1 0 1 0 1 1 1 0) (list ))

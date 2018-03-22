@@ -13,5 +13,6 @@
     )
  )
  
+(display "(list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1) \n  =>  ")
 (maj (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
 ;(maj (list 0 1 2 3)(list 0 2 3 4)(list 0 2 5 1)) ; => '(0 2) 

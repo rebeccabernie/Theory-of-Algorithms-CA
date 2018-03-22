@@ -47,5 +47,6 @@
 
 |#
 
+(display "(list 1 0 1 0 1 1 1 0) \n  =>  ")
 ; Check binary list
 (hamming-weight (list 1 0 1 0 1 1 1 0))

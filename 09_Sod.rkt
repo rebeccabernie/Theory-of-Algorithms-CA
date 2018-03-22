@@ -11,5 +11,6 @@
     )
 )
 
+(display "(list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1) \n  =>  ")
 (sod2 (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
 ; (sod2 (list 0 1 0 1) (list 0 0 1 1) (list 1 0 1 1)) ; Testing, works fine

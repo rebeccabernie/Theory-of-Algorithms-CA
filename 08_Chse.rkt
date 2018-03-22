@@ -13,5 +13,6 @@
     )
 )
 
+(display "(list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1) \n  =>  ")
 (chse (list 0 0 0 0 1 1 1 1) (list 0 0 1 1 0 0 1 1) (list 0 1 0 1 0 1 0 1))
 ;(chse (list 0 1 0 1) (list 1 2 3 4) (list 5 6 7 8)) ; Testing to make sure

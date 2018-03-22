@@ -28,7 +28,9 @@
          (append (flatten-list (car l)) (flatten-list (cdr l))))
         (else (list l))))
 
+(display "lcycle (list 1 2 3 4 5) \n  =>  ")
 (lcycle (list 1 2 3 4 5))
+(display "rcycle (list 1 2 3 4 5) \n  =>  ")
 (rcycle (list 1 2 3 4 5))
 ;(rcycle (list 5 6 7 8 9 10 11)) ; Testing it works with longer lists (it does)
 
