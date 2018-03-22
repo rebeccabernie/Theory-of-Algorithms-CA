@@ -5,7 +5,8 @@
 ## Breakdown of Project
 This repository contains work on 10 exercises, completed from scratch in the [Racket](https://racket-lang.org/) programming language. Permitted built in functions include `cons, car, cdr, define, lambda, if, null, null?, cond, map, =` and basic numerical operators `(+, -, *, /, modulo)`.  
 Each problem is worth 3%, the total weight of the project is 30%.  
-#### Getting Set Up
+
+### Getting Set Up
 Racket (including the DrRacket IDE) can be downloaded [here](http://download.racket-lang.org/). Racket must be added to your system path, if not already there. See [here](https://docs.racket-lang.org/pollen/Installation.html) for a full Racket installation guide.  
 
 To download this repository, open the command line in any folder and type `git clone https://github.com/rebeccabernie/Theory-of-Algorithms-CA.git` and then `cd Theory-of-Algorithms-CA`. Alternatively, the repository can be downloaded as a zip file by clicking the the green "Clone or download" button near the top right of this page, then clicking "Download ZIP".  
@@ -21,7 +22,7 @@ Some explanations contain references to Racket functions `car` and `cdr`. `car` 
 For example, the list '(1 2 3 4 5). The `car` of this list is '(1), and the `cdr` is '(2 3 4 5).
 
 Jump to:  
-[Problem 1](#problem-1) - [Problem 2](#problem-2) - [Problem 3](#problem-3) - [Problem 4](#problem-4) - [Problem 5](#problem-5) - [Problem 6](#problem-6) - [Problem 7](#problem-7) - [Problem 8](#problem-8) - [Problem 9](#problem-9) - [Problem 10](problem-10)
+[Problem 1](#problem-1) - [Problem 2](#problem-2) - [Problem 3](#problem-3) - [Problem 4](#problem-4) - [Problem 5](#problem-5) - [Problem 6](#problem-6) - [Problem 7](#problem-7) - [Problem 8](#problem-8) - [Problem 9](#problem-9) - [Problem 10](#problem-10)
 
 -----  
 
