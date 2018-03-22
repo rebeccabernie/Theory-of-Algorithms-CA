@@ -37,7 +37,7 @@ The function `collatz-list` takes one number, `x`, as input and adds `x`to a lis
 -----  
 
 ### Problem 3
-*Write, from scratch, two functions in Racket. The first is called lcycle - it takes a list as input and returns the list cyclically shifted one place to the left. The second is called rcycle - it shifts the list cyclically shifted one place to the right.*  
+*Write, from scratch, two functions in Racket. The first is called `lcycle` and should take a list as input and return the list cyclically shifted one place to the left. The second is called `rcycle` and should take a list as input and return the list cyclically shifted one place to the right.*  
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/03_Cycle.rkt)*  
 The function `lcycle` takes a list as input, constructs a list using the `cdr` (all elements after the first) of the list and then the `car` (the first element only) of the list, and outputs the resulting list.  
@@ -52,7 +52,7 @@ The function `rcycle`is slightly more complex than `lcycle`. It takes a list as 
 -----  
 
 ### Problem 4
-*Write a function sublsum in Racket that takes a list (of integers) as input and returns a list of sublists of it that sum to zero. For this problem, you can use the combinations built-in function. Note the order of the sublists and their elements doesn't matter.*  
+*Write a function `sublsum` in Racket that takes a list (of integers) as input and returns a list of sublists of it that sum to zero. For this problem, you can use the combinations built-in function. Note the order of the sublists and their elements doesn't matter.*  
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/04_SublistSum.rkt)*  
 The function `sublsum` takes one list as input and returns an empty list if the given list is null, or performs the `combinations` function on the list. The `combinations` function will return a list of all combinations of elements in the input list, or the *powerset of the list*. The `cdr`of this list is passed to the `split` function - only the `cdr` is passed because the first element of a `combinations` generated list is always the empty list, which does not need to be checked.  
@@ -64,7 +64,7 @@ The `sum` function recursively adds each element in a given list to the remainde
 -----  
 
 ### Problem 5
-*Write a function hamming-weight in Racket that takes a list l as input and returns the number of non-zero elements in it.*  
+*Write a function `hamming-weight` in Racket that takes a list l as input and returns the number of non-zero elements in it.*  
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/05_HammingW.rkt)*  
 The function `hamming-weight` takes one list as input and checks first to see if the list is null, in which case 0 is outputted. If the list is not null, the function checks to see if there is only one element in the list. If so, it outputs that element - `(list 0)` has 0 non-zero elements, `(list 1)` has 1 non-zero elements. If there is more than one element in the list, it passes the list to the `sum` function.  
@@ -76,7 +76,7 @@ The `sum` function first checks to see if a given list contains one element. If 
 -----  
 
 ### Problem 6
-*Write a function hamming-distance in Racket that takes two lists and returns the number of positions in which they diﬀer.*  
+*Write a function `hamming-distance` in Racket that takes two lists and returns the number of positions in which they diﬀer.*  
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/06_HammingD.rkt)*  
 The `hamming-distance` function takes two lists as input. If a list is empty, the function will return the length of the other list. The function then checks if the `car` of both lists is the same, the `cdr` of both lists is passed back to the `hamming-distance` function. If the `car`s are not the same, the count is incremented and the `cdr`s passed back to `hamming-distance`.  
@@ -91,6 +91,17 @@ The `hamming-distance` function takes two lists as input. If a list is empty, th
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/07_Maj.rkt)*  
 The function `maj` takes three lists of equal length as input, and will return an empty list if the first list is empty (if one is, they all must be). The function then checks if `car list1` and `car list2`, or `car list1` and `car list3`, or `car list2` and `car list3` are the same. If any of these are true, the element is added to a list and the `cdr`s of each list passed back to `maj`. If the element only appears in one list, the `cdr`s of each list are passed back to `maj`. 
+
+*[back to top](#explanation-of-individual-problems)*  
+
+-----  
+
+### Problem 8
+*Write a function chse in Racket that takes three lists x, y and z of equal length and containing only 0’s and 1’s. It should return a list containing the elements of y in the positions where x is 1 and the elements of z otherwise.*  
+
+*[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/08_Chse.rkt)*  
+The function `chse` takes three lists as input and first checks to see if the first list is null, returning an empty list if so. Otherwise, the function checks if the `car list1` is 1. If so, the `car list2` will be added to a list and the remaining elements of all three lists passed back to `chse`. Otherwise, the `car list1` must be a 0, so the `car list3` is added to a list and the remaining elements of each list passed back to `chse`.  
+*Example:* `(list 0 1 0 1) (list 1 2 3 4) (list 5 6 7 8))` => **'(5 2 7 4)**  
 
 *[back to top](#explanation-of-individual-problems)*  
 
