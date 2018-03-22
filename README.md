@@ -7,7 +7,8 @@ This repository contains work on 10 exercises, completed from scratch in the [Ra
 
 ## Explanation of Individual Problems
 
-Jump to: [Problem 1](#problem-1), [Problem 2](#problem-2), [Problem 3](#problem-3), [Problem 4](#problem-4), 
+Jump to:  
+[Problem 1](#problem-1) - [Problem 2](#problem-2) - [Problem 3](#problem-3) - [Problem 4](#problem-4) - [Problem 5](#problem-5) - [Problem 6](#problem-6) - [Problem 7](#problem-7) - [Problem 8](#problem-8) - [Problem 9](#problem-9) - [Problem 10](problem-10)
 
 -----  
 
@@ -82,3 +83,14 @@ The `hamming-distance` function takes two lists as input. If a list is empty, th
 *Example:* `(list 1 0 1 0 1 1 1 0) (list 1 1 1 1 0 0 0 0))` => **5** positions where elements differ.  `(list ) (list 1 1 1 1 0 0 0 0))` => **8** positions where elements differ.
 
 *[back to top](#explanation-of-individual-problems)*  
+
+-----  
+
+### Problem 7
+*Write a function `maj` in Racket that takes three lists x, y and z of **equal length** and containing only 0’s and 1’s. The function should return a list containing - 1 where two or more of x, y and z contain 1’s, 0 otherwise.*  
+
+*[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/07_Maj.rkt)*  
+The function `maj` takes three lists of equal length as input, and will return an empty list if the first list is empty (if one is, they all must be). The function then checks if `car list1` and `car list2`, or `car list1` and `car list3`, or `car list2` and `car list3` are the same. If any of these are true, the element is added to a list and the `cdr`s of each list passed back to `maj`. If the element only appears in one list, the `cdr`s of each list are passed back to `maj`. 
+
+*[back to top](#explanation-of-individual-problems)*  
+
