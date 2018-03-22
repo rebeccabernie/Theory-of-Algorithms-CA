@@ -108,7 +108,6 @@ The function `chse` takes three lists as input and first checks to see if the fi
 
 *[back to top](#theory-of-algorithms-programming-project-2018)*  
 
-
 -----  
 
 ### Problem 9
@@ -121,3 +120,12 @@ The function `sod2` takes three lists as input and first checks if the first lis
 
 *[back to top](#theory-of-algorithms-programming-project-2018)*  
 
+-----  
+
+### Problem 10
+*Write a function `lstq` in Racket that takes as arguments two lists l and m of equal length and containing numbers. It should return d, the distance given by the sum of the square residuals between the numbers in the lists: d = ([element in l] - [element in m]) ^2*  
+
+*[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/10_Lstq.rkt)*  
+
+
+*[back to top](#theory-of-algorithms-programming-project-2018)*
