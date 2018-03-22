@@ -6,6 +6,8 @@
 This repository contains work on 10 exercises, completed from scratch in the [Racket](https://racket-lang.org/) programming language. Permitted built in functions include `cons, car, cdr, define, lambda, if, null, null?, cond, map, =` and basic numerical operators `(+, -, *, /, modulo)`. Each problem is worth 3%.  
 
 ## Explanation of Individual Problems
+Some explanations contain references to Racket functions `car` and `cdr`. `car` refers to the first element of a given list, `cdr` returns a list containing *all other elements of the list*.  
+For example, the list '(1 2 3 4 5). The `car` of this list is '(1), and the `cdr` is '(2 3 4 5).
 
 Jump to:  
 [Problem 1](#problem-1) - [Problem 2](#problem-2) - [Problem 3](#problem-3) - [Problem 4](#problem-4) - [Problem 5](#problem-5) - [Problem 6](#problem-6) - [Problem 7](#problem-7) - [Problem 8](#problem-8) - [Problem 9](#problem-9) - [Problem 10](problem-10)
@@ -116,5 +118,5 @@ In other words: 1 in one list -> 1, if 1 in two lists -> 0, if 1 in all three ->
 The function `sod2` takes three lists as input and first checks if the first list is null, returning an empty list if so - all lists specified as being the same length, so if one is empty they all are. If the lists are not empty, the function checks to see if the *sum of current element in each list divides by 2 evenly*, adding a 0 to a new list if true and passing the remaining elements of each list back to `sod2`. Otherwise, the number of 1s in the given position in each list must be odd, so 1 is added to a new list and the remaining elements passed back to `sod2`.  
 *Example:* `(list 0 1 0 1) (list 0 0 1 1) (list 1 0 1 1))` returns a new list, **'(1 1 0 1)**.
 
-*[back to top](#explanation-of-individual-problems)*  
+*[back to top](#theory-of-algorithms -programming-project-(30%)-2018)*  
 
