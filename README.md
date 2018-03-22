@@ -118,5 +118,5 @@ In other words: 1 in one list -> 1, if 1 in two lists -> 0, if 1 in all three ->
 The function `sod2` takes three lists as input and first checks if the first list is null, returning an empty list if so - all lists specified as being the same length, so if one is empty they all are. If the lists are not empty, the function checks to see if the *sum of current element in each list divides by 2 evenly*, adding a 0 to a new list if true and passing the remaining elements of each list back to `sod2`. Otherwise, the number of 1s in the given position in each list must be odd, so 1 is added to a new list and the remaining elements passed back to `sod2`.  
 *Example:* `(list 0 1 0 1) (list 0 0 1 1) (list 1 0 1 1))` returns a new list, **'(1 1 0 1)**.
 
-*[back to top](#theory-of-algorithms -programming-project-(30%)-2018)*  
+*[back to top](#theory-of-algorithms-programming-project-(30%)-2018)*  
 
