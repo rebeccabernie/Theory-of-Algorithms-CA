@@ -97,11 +97,24 @@ The function `maj` takes three lists of equal length as input, and will return a
 -----  
 
 ### Problem 8
-*Write a function chse in Racket that takes three lists x, y and z of equal length and containing only 0’s and 1’s. It should return a list containing the elements of y in the positions where x is 1 and the elements of z otherwise.*  
+*Write a function `chse` in Racket that takes three lists x, y and z of equal length and containing only 0’s and 1’s. It should return a list containing the elements of y in the positions where x is 1 and the elements of z otherwise.*  
 
 *[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/08_Chse.rkt)*  
 The function `chse` takes three lists as input and first checks to see if the first list is null, returning an empty list if so. Otherwise, the function checks if the `car list1` is 1. If so, the `car list2` will be added to a list and the remaining elements of all three lists passed back to `chse`. Otherwise, the `car list1` must be a 0, so the `car list3` is added to a list and the remaining elements of each list passed back to `chse`.  
 *Example:* `(list 0 1 0 1) (list 1 2 3 4) (list 5 6 7 8))` => **'(5 2 7 4)**  
+
+*[back to top](#explanation-of-individual-problems)*  
+
+
+-----  
+
+### Problem 9
+*Write a function `sod2` in Racket that takes three lists x, y and z of equal length and containing only 0’s and 1’s. It should return a list containing a '1' where the number of 1’s in a given position in x, y and z contains an odd number of 1’s, and 0 otherwise.*  
+In other words: 1 in one list -> 1, if 1 in two lists -> 0, if 1 in all three -> 1, if 0 in all three -> 0.
+
+*[Racket file](https://github.com/rebeccabernie/Theory-of-Algorithms-CA/blob/master/09_Sod.rkt)*  
+The function `sod2` takes three lists as input and first checks if the first list is null, returning an empty list if so - all lists specified as being the same length, so if one is empty they all are. If the lists are not empty, the function checks to see if the *sum of current element in each list divides by 2 evenly*, adding a 0 to a new list if true and passing the remaining elements of each list back to `sod2`. Otherwise, the number of 1s in the given position in each list must be odd, so 1 is added to a new list and the remaining elements passed back to `sod2`.  
+*Example:* `(list 0 1 0 1) (list 0 0 1 1) (list 1 0 1 1))` returns a new list, **'(1 1 0 1)**.
 
 *[back to top](#explanation-of-individual-problems)*  
 
