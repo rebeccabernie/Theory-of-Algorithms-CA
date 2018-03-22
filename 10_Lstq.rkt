@@ -5,9 +5,12 @@
 
 (define (lstq l m)
     (cond  [(null? l) '()]
-        [else (cons (- (car l) (car m)) (lstq (cdr l)(cdr m)))]
+        [else (cons (get-power (car l) (car m)) (lstq (cdr l)(cdr m)))]
     )
+)
 
+(define (get-power li mi)
+    (* (- li mi) (- li mi))
 )
 
 (lstq (list 4.5 5.1 6.2 7.8) (list 1.1 -0.1 6.1 3.8))
